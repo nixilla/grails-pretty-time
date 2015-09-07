@@ -1,0 +1,11 @@
+grails:
+   profile: plugin
+   doc:
+      authors: 'Cazacu Mihai'
+      license: 'Apache License 2.0'
+      title:   'Pretty-time plugin'
+info:
+   app:
+      name: '@info.app.name@'
+      version: '@info.app.version@'
+      grailsVersion: '@info.app.grailsVersion@'

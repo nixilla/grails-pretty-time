@@ -35,17 +35,20 @@ class PrettyTimeTagLib {
         def prettyTime = new PrettyTime(RequestContextUtils.getLocale(request))
         String result = prettyTime.format(date).trim()
 
-        if (capitalize) result = StringUtils.capitalize(result)
+        if (capitalize) {
+            result = StringUtils.capitalize(result)
+        }
 
         if (showTime) {
             def format = attrs.remove('format') ?: message(code: 'default.date.format', default: 'hh:mm:ss a')
             result += ', ' + date.format(format)
         }
 
-        if (html5wrapper)
+        if (html5wrapper) {
             out << """<time datetime="${g.formatDate(date: date)}" title="${g.formatDate(date: date)}">${result}</time>"""
-        else
+        }
+        else {
             out << result
+        }
     }
-
 }
